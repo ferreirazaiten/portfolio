@@ -19,7 +19,7 @@ const transitionScreen = document.createElement("div");
 transitionScreen.classList.add("transition-screen");
 
 transitionScreen.innerHTML = `
-    <img src="gifs/substituircarregamento.gif" alt="Persona Transition">
+    <img src="gifs/novocarregar.gif" alt="Persona Transition">
 `;
 
 document.body.appendChild(transitionScreen);

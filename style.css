@@ -644,6 +644,7 @@ footer{
 .estrela3{
     position:fixed;
     pointer-events:none;
+    z-index:0;
 }
 
 /* Estrela Inferior Esquerda */
@@ -673,8 +674,6 @@ footer{
     );
 
     animation:girar 18s linear infinite;
-
-    z-index:-5;
 }
 
 /* Estrela Superior Direita */
@@ -704,8 +703,6 @@ footer{
     );
 
     animation:girar 12s linear infinite reverse;
-
-    z-index:-5;
 }
 
 /* Estrela Central Gigante */
@@ -737,6 +734,13 @@ footer{
     );
 
     animation:girar 35s linear infinite;
+}
 
-    z-index:-6;
+/* Mantém conteúdo acima das estrelas */
+
+header,
+section,
+footer{
+    position:relative;
+    z-index:2;
 }

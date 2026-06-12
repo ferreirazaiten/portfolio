@@ -634,3 +634,109 @@ footer{
     width:450px;
     max-width:80%;
 }
+
+/* ==========================================
+   ESTRELAS PERSONA 5 NO FUNDO
+========================================== */
+
+.estrela1,
+.estrela2,
+.estrela3{
+    position:fixed;
+    pointer-events:none;
+}
+
+/* Estrela Inferior Esquerda */
+
+.estrela1{
+    width:450px;
+    height:450px;
+
+    left:-120px;
+    bottom:-120px;
+
+    background:var(--rubi-neon);
+
+    opacity:.04;
+
+    clip-path:polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+
+    animation:girar 18s linear infinite;
+
+    z-index:-5;
+}
+
+/* Estrela Superior Direita */
+
+.estrela2{
+    width:280px;
+    height:280px;
+
+    top:180px;
+    right:50px;
+
+    background:white;
+
+    opacity:.03;
+
+    clip-path:polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+
+    animation:girar 12s linear infinite reverse;
+
+    z-index:-5;
+}
+
+/* Estrela Central Gigante */
+
+.estrela3{
+    width:650px;
+    height:650px;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:var(--rubi-neon-claro);
+
+    opacity:.02;
+
+    clip-path:polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+
+    animation:girar 35s linear infinite;
+
+    z-index:-6;
+}

@@ -29,18 +29,17 @@ document.querySelectorAll("a").forEach(link => {
 
     if (!href) return;
 
-    // Não aplica transição em Sobre e Atuação
+    // Não ativa loading em âncoras da mesma página
     if (
-      href === "#sobre" ||
-      href === "#atuacao"
+      href.startsWith("#") ||
+      href.includes("#sobre") ||
+      href.includes("#atuacao") ||
+      href.includes("#contato")
     ) {
       return;
     }
 
-    // Não ativa loading em outras âncoras da mesma página
-    if (href.startsWith("#")) return;
-
-    // Não ativa loading em links externos
+    // Não ativa loading em links externos, email, telefone ou nova aba
     if (
       href.startsWith("http") ||
       href.startsWith("mailto") ||

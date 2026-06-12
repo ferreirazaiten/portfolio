@@ -601,38 +601,6 @@ footer{
         height:320px;
     }
 }
-body{
-    background-image:
-        linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
-        url("images/persona.png");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-}
-.transition-screen{
-    position:fixed;
-    inset:0;
-    background:#000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:99999;
-    opacity:0;
-    pointer-events:none;
-    transition:.4s;
-}
-
-.transition-screen.active{
-    opacity:1;
-    pointer-events:all;
-}
-
-.transition-screen img{
-    width:350px;
-    max-width:80%;
-}
 
 /* ==========================================
    TRANSIÇÃO PERSONA 5

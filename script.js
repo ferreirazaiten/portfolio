@@ -1,13 +1,13 @@
 const reveals = document.querySelectorAll(".reveal");
 
-function aparecer(){
-    reveals.forEach(item => {
-        const topo = item.getBoundingClientRect().top;
+function aparecer() {
+  reveals.forEach(item => {
+    const topo = item.getBoundingClientRect().top;
 
-        if(topo < window.innerHeight - 100){
-            item.classList.add("active");
-        }
-    });
+    if (topo < window.innerHeight - 100) {
+      item.classList.add("active");
+    }
+  });
 }
 
 window.addEventListener("scroll", aparecer);
@@ -27,10 +27,17 @@ document.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", function(event) {
     const href = this.getAttribute("href");
 
+    // Não ativa loading em links vazios
+    if (!href) return;
+
+    // Não ativa loading em links de seção da mesma página
+    if (href.startsWith("#")) return;
+
+    // Não ativa loading em links externos, email, telefone ou nova aba
     if (
-      !href ||
       href.startsWith("http") ||
       href.startsWith("mailto") ||
+      href.startsWith("tel") ||
       this.hasAttribute("target")
     ) {
       return;

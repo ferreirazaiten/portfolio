@@ -14,37 +14,34 @@ window.addEventListener("scroll", aparecer);
 aparecer();
 
 /* TRANSIÇÃO PERSONA 5 */
-
 const transitionScreen = document.createElement("div");
 transitionScreen.classList.add("transition-screen");
 
 transitionScreen.innerHTML = `
-    <img src="gifs/novocarregar.gif" alt="Persona Transition">
+  <img src="gifs/novocarregar.gif" alt="Carregamento Persona 5">
 `;
 
 document.body.appendChild(transitionScreen);
 
 document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function(event){
-        const href = this.getAttribute("href");
+  link.addEventListener("click", function(event) {
+    const href = this.getAttribute("href");
 
-        if(
-            !href ||
-            href.startsWith("http") ||
-            href.startsWith("mailto") ||
-            this.hasAttribute("target")
-        ){
-            return;
-        }
+    if (
+      !href ||
+      href.startsWith("http") ||
+      href.startsWith("mailto") ||
+      this.hasAttribute("target")
+    ) {
+      return;
+    }
 
-        event.preventDefault();
+    event.preventDefault();
 
-        transitionScreen.classList.add("active");
+    transitionScreen.classList.add("active");
 
-        setTimeout(() => {
-            transitionScreen.classList.remove("active");
-
-            window.location.href = href;
-        }, 1400);
-    });
+    setTimeout(() => {
+      window.location.href = href;
+    }, 1400);
+  });
 });

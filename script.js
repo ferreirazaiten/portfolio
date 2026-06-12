@@ -27,13 +27,20 @@ document.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", function(event) {
     const href = this.getAttribute("href");
 
-    // Não ativa loading em links vazios
     if (!href) return;
 
-    // Não ativa loading em links de seção da mesma página
+    // Não aplica transição em Sobre e Atuação
+    if (
+      href === "#sobre" ||
+      href === "#atuacao"
+    ) {
+      return;
+    }
+
+    // Não ativa loading em outras âncoras da mesma página
     if (href.startsWith("#")) return;
 
-    // Não ativa loading em links externos, email, telefone ou nova aba
+    // Não ativa loading em links externos
     if (
       href.startsWith("http") ||
       href.startsWith("mailto") ||
